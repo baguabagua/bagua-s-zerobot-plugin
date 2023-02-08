@@ -1,10 +1,7 @@
 package ttt
 
 import (
-	"flag"
-
 	zero "github.com/wdvxdr1123/ZeroBot"
-	"github.com/wdvxdr1123/ZeroBot/extension/shell"
 	"github.com/wdvxdr1123/ZeroBot/message"
 )
 
