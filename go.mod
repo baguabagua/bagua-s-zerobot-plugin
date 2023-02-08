@@ -1,4 +1,4 @@
-module test
+module github.com/baguabagua/bagua-zerobot-plugin
 
 go 1.19
 
