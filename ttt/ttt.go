@@ -5,19 +5,19 @@ import (
 	"github.com/wdvxdr1123/ZeroBot/message"
 )
 
-type TTTstate struct {
+type tttstate struct {
 	open bool
 	board [9]int
 	OorX bool
 }
 
-var state TTTstate
+var state tttstate
 
 func ttt_init() {
 	state.open = false
 }
 
-func (s TTTstate) print_board() string {
+func (s tttstate) print_board() string {
 	m := ""
 	for i := 0; i < 3; i++ {
 		m += "\n"
@@ -35,14 +35,14 @@ func (s TTTstate) print_board() string {
 	return m
 }
 
-func (s TTTstate) line(a int, b int, c int) (bool, int) {
+func (s tttstate) line(a int, b int, c int) (bool, int) {
 	if s.board[a] == 0 {
 		return false, 0
 	}
 	return s.board[a] == s.board[b] && s.board[a] == s.board[c], s.board[a]
 }
 
-func (s TTTstate) endgame() (bool, int) {
+func (s tttstate) endgame() (bool, int) {
 	lines := [][]int {{0, 1, 2}, {3, 4, 5}, {6, 7, 8}, {0, 3, 6}, {1, 4, 7}, {2, 5, 8}, {0, 4, 8}, {2, 4, 6}}
 	for _, l := range lines {
 		end, winner := s.line(l[0], l[1], l[2])
